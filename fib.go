@@ -36,7 +36,7 @@ func fib(n int) int {
 		for i := len(seq); i <= n; i++{
 			seq = append(seq, seq[i-1] + seq[i-2])
 			
-			if (seq[i-1] + seq[i-2]) < seq[i-1] {
+			if seq[i] < 0 {
 				// ERROR: rolled the int
 				fmt.Printf("ERROR: Int roll at %d (%d + %d returned %d) \n", i, seq[i-2], seq[i-1], seq[i])
 				os.Exit(1)
